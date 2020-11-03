@@ -1,0 +1,35 @@
+﻿@model IEnumerable<News>
+
+@{
+    ViewData["Title"] = "Middle East";
+}
+
+    <section>
+       
+        <div class="container-fluid mt-5">
+            <div class="row">
+                @foreach (var n in Model)
+                {
+                <div class="col-md-4 ">
+                    <div class="card m-2 " style="width: 28rem;height:27rem">
+
+                    <a asp-action="MiddleEast" asp-controller="News" asp-route-id="@n.Id"> <img src="@n.NewImage" class="card-img-top" alt="..."></a> 
+                       <a asp-action="MiddleEast" asp-controller="News" asp-route-id="@n.Id">
+                           <div class="card-body ">
+                               <h5 class="card-title text-dark">@n.Title</h5>
+                               <p class="card-text text-black-50">@n.Topic</p>
+
+                           </div>
+                       </a>
+                    </div>
+
+                </div>
+
+                }
+            </div>
+        </div>
+    </section>
+
+
+
+
